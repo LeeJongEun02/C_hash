@@ -1,0 +1,36 @@
+using System;
+using System.Linq;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // 변수, 배열 선언
+            int i, j, min, index = 0, temp;
+            int[] array = { 1, 10, 5, 8, 7, 6, 4, 3, 2, 9 };
+
+            // 비교하기
+            for (i = 0; i < 10; i++)
+            {
+                min = array.Max();
+                for (j = i; j < 10; j++)
+                {
+                    if(min > array[j])
+                    {
+                        min = array[j];
+                        index = j;
+                    }
+                }
+                temp = array[i];
+                array[i] = array[index];
+                array[index] = temp;
+            }
+            for (i = 0; i < 10; i++)
+            {
+                Console.Write(array[i] + " ");
+            }
+        }
+    }
+}
